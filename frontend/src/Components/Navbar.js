@@ -1,36 +1,52 @@
 import React from "react";
 import cofawo from "../cofawo.png";
-import "./Navbar.css";
+import FAQ from "../FAQ";
+//import "./Navbar.css";
 
 const Navbar = () => {
   return (
-    <div className="header">
-      <div className="navbar">
-        <img src={cofawo} alt="cofawo logo" className="logo" />
-        <p>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="#">
           COMMUNITY FOOD AND
-          <br /> WATER OBSERVATORY
-        </p>
-
-        <nav>
-          <ul>
-            <li>
-              <a href="#">Home</a>
+          <br />
+          WATER OBSERVATORY
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">
+                Home
+              </a>
             </li>
-            <li>
-              <a href="#">Home</a>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                About
+              </a>
             </li>
-            <li>
-              <a href="#">Home</a>
-            </li>
-            <li>
-              <a href="#">Home</a>
+            <li class="nav-item">
+              <a class="nav-link" href={<FAQ />}>
+                FAQ
+              </a>
             </li>
           </ul>
-          <i className="bi bi-list" />
-        </nav>
+        </div>
       </div>
-    </div>
+    </nav>
   );
 };
 
