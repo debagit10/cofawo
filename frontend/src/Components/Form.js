@@ -1,6 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Form = () => {
+  const [experienced, setExperienced] = useState([]);
+  const [location, setLocation] = useState();
+  const [confidential, setConfidential] = useState();
+  const [detail, setDetail] = useState();
+  const [notify, setNotify] = useState();
+  const [alert, setAlert] = useState();
+  //console.log(experienced);
+  const handleExperience = (e) => {
+    experienced.push(e.target.value);
+    console.log(e.target.value);
+  };
+  const handleSubmit = () => {
+    console.log(experienced, location, confidential, detail, notify, alert);
+  };
   return (
     <div className="container card mt-4">
       <div className="card-body">
@@ -15,6 +29,8 @@ const Form = () => {
                 class="btn-check"
                 id="nausea"
                 autocomplete="off"
+                value="nausea"
+                onClick={handleExperience}
               />
               <label class="btn btn-outline-primary" for="nausea">
                 Nausea
@@ -26,6 +42,8 @@ const Form = () => {
                 class="btn-check"
                 id="vomiting"
                 autocomplete="off"
+                value="vomiting"
+                onClick={handleExperience}
               />
               <label class="btn btn-outline-primary" for="vomiting">
                 Vomiting
@@ -40,6 +58,8 @@ const Form = () => {
                 class="btn-check"
                 id="diarrhea"
                 autocomplete="off"
+                value="diarrhea"
+                onClick={handleExperience}
               />
               <label class="btn btn-outline-primary" for="diarrhea">
                 Diarrhea
@@ -51,6 +71,8 @@ const Form = () => {
                 class="btn-check"
                 id="else"
                 autocomplete="off"
+                value="else"
+                onClick={handleExperience}
               />
               <label class="btn btn-outline-primary" for="else">
                 Something else
@@ -66,6 +88,7 @@ const Form = () => {
             class="form-control"
             id="exampleFormControlInput1"
             placeholder="Where? e.g: Korede's spag"
+            onChange={(e) => setLocation(e.target.value)}
           />
         </div>
         <div className="mt-3">
@@ -76,6 +99,8 @@ const Form = () => {
               type="radio"
               name="flexRadioDefault"
               id="flexRadioDefault1"
+              value="yes"
+              onClick={(e) => setConfidential(e.target.value)}
             />
             <label class="form-check-label" for="flexRadioDefault1">
               Yes
@@ -87,7 +112,8 @@ const Form = () => {
               type="radio"
               name="flexRadioDefault"
               id="flexRadioDefault2"
-              checked
+              value="no"
+              onClick={(e) => setConfidential(e.target.value)}
             />
             <label class="form-check-label" for="flexRadioDefault2">
               No
@@ -104,10 +130,11 @@ const Form = () => {
             id="exampleFormControlTextarea1"
             rows="5"
             placeholder="Please provide when the incident took place, specifics of the event, and any other information that may be pertinent. The more comprehensive, the more helpful."
+            onChange={(e) => setDetail(e.target.value)}
           ></textarea>
         </div>
         <div>
-          <button type="button" class="btn btn-primary">
+          <button type="button" class="btn btn-primary" onClick={handleSubmit}>
             REPORT IT NOW
           </button>
         </div>
@@ -116,9 +143,9 @@ const Form = () => {
             <input
               class="form-check-input"
               type="checkbox"
-              value=""
+              value="yes"
               id="notification"
-              checked
+              onClick={(e) => setNotify(e.target.value)}
             />
             <label class="form-check-label" for="notification">
               Get notification for my case
@@ -129,9 +156,9 @@ const Form = () => {
             <input
               class="form-check-input"
               type="checkbox"
-              value=""
+              value="yes"
               id="regulators"
-              checked
+              onClick={(e) => setAlert(e.target.value)}
             />
             <label class="form-check-label" for="regulators">
               Alert regulators

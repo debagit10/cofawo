@@ -1,8 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Feed = () => {
+  const navigate = useNavigate();
   return (
     <div className="container">
+      <button onClick={() => navigate("/questionnaire")}>
+        Please Take Our General Questionnaire
+      </button>
+      <h4 className="text-center"> Reports Feed</h4>
       <div class="card mb-3">
         <div class="card-body">
           <h5 class="card-title">Card title</h5>

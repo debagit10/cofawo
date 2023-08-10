@@ -2,10 +2,13 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div>
+    <div className="mt-4">
       <footer class="p-5 bg-dark text-white text-center position-relative">
         <div class="container">
-          <p class="lead">Copyright &copy; 2022 Josiah Elias</p>
+          <p class="lead">
+            Copyright &copy; 2023 <span className="logo-one">CoFa</span>
+            <span className="logo-two">Wo</span>
+          </p>
 
           <a href="" class="position-fixed bottom-0 end-0 p-2">
             <i class="bi bi-arrow-up-circle h1 text-secondary"></i>
