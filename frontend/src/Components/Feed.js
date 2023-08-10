@@ -5,7 +5,10 @@ const Feed = () => {
   const navigate = useNavigate();
   return (
     <div className="container">
-      <button onClick={() => navigate("/questionnaire")}>
+      <button
+        onClick={() => navigate("/questionnaire")}
+        className="btn btn-primary w-100"
+      >
         Please Take Our General Questionnaire
       </button>
       <h4 className="text-center"> Reports Feed</h4>
