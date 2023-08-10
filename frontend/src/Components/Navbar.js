@@ -66,6 +66,14 @@ const Navbar = () => {
                 Participate
               </a>
             </li>
+            <li class="nav-item">
+              <button
+                class="btn btn-primary"
+                onClick={() => navigate("/login")}
+              >
+                Login as Admin
+              </button>
+            </li>
           </ul>
         </div>
       </div>

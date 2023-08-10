@@ -9,11 +9,6 @@ const App = () => {
   return (
     <div>
       <Homepage />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/login" Component={Login} />
-        </Routes>
-      </BrowserRouter>
     </div>
   );
 };
