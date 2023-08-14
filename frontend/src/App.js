@@ -11,6 +11,7 @@ import Involved from "./Components/Involved";
 import Questionnaire from "./Pages/Questionnaire";
 import Navbar from "./Components/Navbar";
 import Footer from "./Footer";
+import Home from "./Pages/Home";
 
 const App = () => {
   return (
@@ -21,7 +22,8 @@ const App = () => {
         </div>
         <div>
           <Routes>
-            <Route path="/" Component={Report} />
+            <Route path="/" Component={Home} />
+            <Route path="/report" Component={Report} />
             <Route path="/faq" Component={FAQ} />
             <Route path="/team" Component={Team} />
             <Route path="/about" Component={About} />
