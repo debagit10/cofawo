@@ -6,7 +6,7 @@ import img4 from "../slider-image/img-4.png";
 
 const Slider = () => {
   return (
-    <div>
+    <div style={{}}>
       <div
         id="carouselExampleCaptions"
         class="carousel slide"

@@ -23,7 +23,7 @@ const Safety = () => {
           <div class="col-md">
             <div>
               <div class="text-center">
-                <img src={img1} alt="" class=" mb-3 img-fluid rounded-circle" />
+                <img src={img1} alt="" class=" mb-3 img-fluid " />
                 <h6>
                   Choose restaurants that are clean and well-maintained. Look
                   for restaurants that have clean floors, tables, and
