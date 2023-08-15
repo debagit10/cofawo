@@ -162,7 +162,7 @@ const [alert, setAlert] = useState();*/
           ></textarea>
         </div>
         <div>
-          <button type="button" class="btn btn-primary">
+          <button type="button" class="btn btn-primary" onClick={handleSubmit}>
             REPORT IT NOW
           </button>
         </div>
