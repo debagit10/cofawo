@@ -8,7 +8,7 @@ import "./Navbar.css";
 const Navbar = () => {
   const navigate = useNavigate();
   return (
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-secondary-subtle bg-gradient">
       <div class="container">
         <a class="navbar-brand" onClick={() => navigate("/")}>
           <h4>
@@ -30,49 +30,46 @@ const Navbar = () => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon "></span>
         </button>
         <div
           class="collapse navbar-collapse justify-content-end"
           id="navbarNav"
         >
           <ul class="navbar-nav">
-            <li class="nav-item">
+            <li class="nav-item px-2">
               <a
-                class="nav-link active"
+                class="nav-link"
                 aria-current="page"
                 onClick={() => navigate("/")}
               >
-                Home
+                <h6> Home</h6>
               </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item  px-2">
               <a class="nav-link" onClick={() => navigate("/about")}>
-                About
+                <h6> About</h6>
               </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item  px-2">
               <a class="nav-link" onClick={() => navigate("/faq")}>
-                FAQ
+                <h6> FAQ</h6>
               </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item  px-2">
               <a class="nav-link" onClick={() => navigate("/team")}>
-                Our Team
+                <h6> Team</h6>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" onClick={() => navigate("/participate")}>
-                Participate
+            <li class="nav-item  px-2">
+              <a class="nav-link" onClick={() => navigate("/report")}>
+                <h6> Report</h6>
               </a>
             </li>
-            <li class="nav-item">
-              <button
-                class="btn btn-primary"
-                onClick={() => navigate("/login")}
-              >
-                Login as Admin
-              </button>
+            <li class="nav-item  px-2">
+              <a class="nav-link" onClick={() => navigate("/login")}>
+                <h6> Login</h6>
+              </a>
             </li>
           </ul>
         </div>

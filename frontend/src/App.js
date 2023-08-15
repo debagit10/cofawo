@@ -7,7 +7,6 @@ import Login from "./Pages/Login";
 import FAQ from "./Components/FAQ";
 import Team from "./Components/Team";
 import About from "./Components/About";
-import Involved from "./Components/Involved";
 import Questionnaire from "./Pages/Questionnaire";
 import Navbar from "./Components/Navbar";
 import Footer from "./Footer";
@@ -27,7 +26,6 @@ const App = () => {
             <Route path="/faq" Component={FAQ} />
             <Route path="/team" Component={Team} />
             <Route path="/about" Component={About} />
-            <Route path="/participate" Component={Involved} />
             <Route path="/questionnaire" Component={Questionnaire} />
             <Route path="/login" Component={Login} />
           </Routes>
