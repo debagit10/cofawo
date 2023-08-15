@@ -28,9 +28,11 @@ const [alert, setAlert] = useState();*/
     });
   };
 
-  const handleExperience = () => {};
+  //const handleExperience = () => {};
 
-  console.log(formData);
+  const handleSubmit = () => {
+    console.log(formData);
+  };
   {
     /*const handleExperience = (e) => {
     experienced.push(e.target.value);
