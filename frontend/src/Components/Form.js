@@ -1,20 +1,45 @@
 import React, { useState } from "react";
 
 const Form = () => {
-  const [experienced, setExperienced] = useState([]);
+  {
+    /*const [experienced, setExperienced] = useState([]);
   const [location, setLocation] = useState();
   const [confidential, setConfidential] = useState();
   const [detail, setDetail] = useState();
   const [notify, setNotify] = useState();
-  const [alert, setAlert] = useState();
+const [alert, setAlert] = useState();*/
+  }
   //console.log(experienced);
-  const handleExperience = (e) => {
+  const [formData, setFormData] = useState({
+    experienced: [""],
+    isConfidential: true,
+    detail: "",
+    notify: true,
+    alert: true,
+    location: "",
+  });
+  const handleChange = (event) => {
+    const { id, value, type, checked } = event.target;
+    setFormData((prevFormData) => {
+      return {
+        ...prevFormData,
+        [id]: type === "checkbox" ? checked : value,
+      };
+    });
+  };
+
+  const handleExperience = () => {};
+
+  console.log(formData);
+  {
+    /*const handleExperience = (e) => {
     experienced.push(e.target.value);
     console.log(e.target.value);
   };
   const handleSubmit = () => {
     console.log(experienced, location, confidential, detail, notify, alert);
-  };
+  };*/
+  }
   return (
     <div className="container card mt-4">
       <div className="card-body">
@@ -27,12 +52,12 @@ const Form = () => {
               <input
                 type="checkbox"
                 class="btn-check"
-                id="nausea"
+                id="experienced"
                 autocomplete="off"
-                value="nausea"
-                onClick={handleExperience}
+                value={(formData.experienced = "nausea")}
+                onChange={handleChange}
               />
-              <label class="btn btn-outline-primary" for="nausea">
+              <label class="btn btn-outline-primary" for="experienced">
                 Nausea
               </label>
             </div>
@@ -40,12 +65,12 @@ const Form = () => {
               <input
                 type="checkbox"
                 class="btn-check"
-                id="vomiting"
+                id="experienced"
                 autocomplete="off"
-                value="vomiting"
-                onClick={handleExperience}
+                value={(formData.experienced = "vomiting")}
+                onChange={handleChange}
               />
-              <label class="btn btn-outline-primary" for="vomiting">
+              <label class="btn btn-outline-primary" for="experienced">
                 Vomiting
               </label>
             </div>
@@ -56,12 +81,12 @@ const Form = () => {
               <input
                 type="checkbox"
                 class="btn-check"
-                id="diarrhea"
+                id="experienced"
                 autocomplete="off"
-                value="diarrhea"
-                onClick={handleExperience}
+                value={(formData.experienced = "diarrhea")}
+                onChange={handleChange}
               />
-              <label class="btn btn-outline-primary" for="diarrhea">
+              <label class="btn btn-outline-primary" for="experienced">
                 Diarrhea
               </label>
             </div>
@@ -69,26 +94,27 @@ const Form = () => {
               <input
                 type="checkbox"
                 class="btn-check"
-                id="else"
+                id="experienced"
                 autocomplete="off"
-                value="else"
-                onClick={handleExperience}
+                value={(formData.experienced = "else")}
+                onChange={handleChange}
               />
-              <label class="btn btn-outline-primary" for="else">
+              <label class="btn btn-outline-primary" for="experienced">
                 Something else
               </label>
             </div>
           </div>
           <br />
-          <label for="exampleFormControlInput1" class="form-label">
+          <label for="location" class="form-label">
             <h6> From:</h6>
           </label>
           <input
             type="email"
             class="form-control"
-            id="exampleFormControlInput1"
+            id="location"
             placeholder="Where? e.g: Korede's spag"
-            onChange={(e) => setLocation(e.target.value)}
+            onChange={handleChange}
+            value={formData.location}
           />
         </div>
         <div className="mt-3">
@@ -97,12 +123,12 @@ const Form = () => {
             <input
               class="form-check-input"
               type="radio"
-              name="flexRadioDefault"
-              id="flexRadioDefault1"
+              id="isConfidential"
               value="yes"
-              onClick={(e) => setConfidential(e.target.value)}
+              checked={formData.isConfidential === "yes"}
+              onChange={handleChange}
             />
-            <label class="form-check-label" for="flexRadioDefault1">
+            <label class="form-check-label" for="isConfidential">
               Yes
             </label>
           </div>
@@ -110,31 +136,31 @@ const Form = () => {
             <input
               class="form-check-input"
               type="radio"
-              name="flexRadioDefault"
-              id="flexRadioDefault2"
+              id="isConfidential"
               value="no"
-              onClick={(e) => setConfidential(e.target.value)}
+              checked={formData.isConfidential === "no"}
+              onChange={handleChange}
             />
-            <label class="form-check-label" for="flexRadioDefault2">
+            <label class="form-check-label" for="isConfidential">
               No
             </label>
           </div>
         </div>
 
         <div class="my-3">
-          <label for="exampleFormControlTextarea1" class="form-label">
+          <label for="detail" class="form-label">
             <h6>Detail your experience:</h6>
           </label>
           <textarea
             class="form-control"
-            id="exampleFormControlTextarea1"
+            id="detail"
             rows="5"
             placeholder="Please provide when the incident took place, specifics of the event, and any other information that may be pertinent. The more comprehensive, the more helpful."
-            onChange={(e) => setDetail(e.target.value)}
+            onChange={handleChange}
           ></textarea>
         </div>
         <div>
-          <button type="button" class="btn btn-primary" onClick={handleSubmit}>
+          <button type="button" class="btn btn-primary">
             REPORT IT NOW
           </button>
         </div>
@@ -143,11 +169,11 @@ const Form = () => {
             <input
               class="form-check-input"
               type="checkbox"
-              value="yes"
-              id="notification"
-              onClick={(e) => setNotify(e.target.value)}
+              checked={formData.notify}
+              id="notify"
+              onChange={handleChange}
             />
-            <label class="form-check-label" for="notification">
+            <label class="form-check-label" for="notify">
               Get notification for my case
             </label>
           </div>
@@ -156,11 +182,11 @@ const Form = () => {
             <input
               class="form-check-input"
               type="checkbox"
-              value="yes"
-              id="regulators"
-              onClick={(e) => setAlert(e.target.value)}
+              checked={formData.alert}
+              id="alert"
+              onChange={handleChange}
             />
-            <label class="form-check-label" for="regulators">
+            <label class="form-check-label" for="alert">
               Alert regulators
             </label>
           </div>
