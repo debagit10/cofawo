@@ -29,7 +29,6 @@ const Action = () => {
             of food poisoning on university campuses.
           </li>
         </ul>
-        <hr />
       </div>
     </div>
   );

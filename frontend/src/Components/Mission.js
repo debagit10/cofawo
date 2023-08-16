@@ -13,7 +13,7 @@ const Mission = () => {
           collecting data on food poisoning cases, and advocating for food
           safety policies.
         </h6>
-        <hr />
+
       </div>
     </div>
   );

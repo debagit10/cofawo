@@ -23,7 +23,7 @@ const Goals = () => {
           Collaborate with other organizations to reduce the incidence of food
           poisoning on university campuses.
         </h6>
-        <hr />
+       
       </div>
     </div>
   );

@@ -1,18 +1,12 @@
 import React, { useState } from "react";
 
 const Form = () => {
-  {
-    /*const [experienced, setExperienced] = useState([]);
-  const [location, setLocation] = useState();
-  const [confidential, setConfidential] = useState();
-  const [detail, setDetail] = useState();
-  const [notify, setNotify] = useState();
-const [alert, setAlert] = useState();*/
-  }
-  //console.log(experienced);
   const [formData, setFormData] = useState({
-    experienced: [""],
-    isConfidential: true,
+    nausea: false,
+    vomiting: false,
+    diarrhea: false,
+    else: false,
+    isConfidential: false,
     detail: "",
     notify: true,
     alert: true,
@@ -28,20 +22,10 @@ const [alert, setAlert] = useState();*/
     });
   };
 
-  //const handleExperience = () => {};
-
   const handleSubmit = () => {
     console.log(formData);
   };
-  {
-    /*const handleExperience = (e) => {
-    experienced.push(e.target.value);
-    console.log(e.target.value);
-  };
-  const handleSubmit = () => {
-    console.log(experienced, location, confidential, detail, notify, alert);
-  };*/
-  }
+
   return (
     <div className="container card mt-4">
       <div className="card-body">
@@ -54,12 +38,11 @@ const [alert, setAlert] = useState();*/
               <input
                 type="checkbox"
                 class="btn-check"
-                id="experienced"
+                id="nausea"
                 autocomplete="off"
-                value={(formData.experienced = "nausea")}
                 onChange={handleChange}
               />
-              <label class="btn btn-outline-primary" for="experienced">
+              <label class="btn btn-outline-primary" for="nausea">
                 Nausea
               </label>
             </div>
@@ -67,12 +50,11 @@ const [alert, setAlert] = useState();*/
               <input
                 type="checkbox"
                 class="btn-check"
-                id="experienced"
+                id="vomiting"
                 autocomplete="off"
-                value={(formData.experienced = "vomiting")}
                 onChange={handleChange}
               />
-              <label class="btn btn-outline-primary" for="experienced">
+              <label class="btn btn-outline-primary" for="vomiting">
                 Vomiting
               </label>
             </div>
@@ -83,12 +65,11 @@ const [alert, setAlert] = useState();*/
               <input
                 type="checkbox"
                 class="btn-check"
-                id="experienced"
+                id="diarrhea"
                 autocomplete="off"
-                value={(formData.experienced = "diarrhea")}
                 onChange={handleChange}
               />
-              <label class="btn btn-outline-primary" for="experienced">
+              <label class="btn btn-outline-primary" for="diarrhea">
                 Diarrhea
               </label>
             </div>
@@ -96,12 +77,11 @@ const [alert, setAlert] = useState();*/
               <input
                 type="checkbox"
                 class="btn-check"
-                id="experienced"
+                id="else"
                 autocomplete="off"
-                value={(formData.experienced = "else")}
                 onChange={handleChange}
               />
-              <label class="btn btn-outline-primary" for="experienced">
+              <label class="btn btn-outline-primary" for="else">
                 Something else
               </label>
             </div>
