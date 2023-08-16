@@ -1,32 +1,67 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
+import { useCookies } from "react-cookie";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const [adminID, setadminID] = useState();
+  const [password, setPassword] = useState();
+  const [cookies, setCookie, removeCookies] = useCookies();
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!adminID || !password) {
+      console.log("fill all fields");
+      return;
+    }
+
+    const config = { headers: { "Content-type": "application/json" } };
+
+    const response = await axios.post(
+      "http://localhost:5000/login",
+      {
+        adminID,
+        password,
+      },
+      config
+    );
+    console.log(response.data);
+    const admin = response.data;
+    if (admin.success) {
+      setCookie("Token", admin.token);
+      navigate("/");
+    }
+  };
+
   return (
     <form>
       <div class="mb-3">
         <h5 className="text-center">Login as Admin</h5>
-        <label for="exampleInputEmail1" class="form-label">
+        <label for="admin's ID" class="form-label">
           Admin's ID
         </label>
         <input
           type="email"
           class="form-control"
-          id="exampleInputEmail1"
+          id="admin's ID"
           aria-describedby="emailHelp"
+          onChange={(e) => setadminID(e.target.value)}
         />
       </div>
       <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">
+        <label for="password" class="form-label">
           Password
         </label>
         <input
           type="password"
           class="form-control"
-          id="exampleInputPassword1"
+          id="password"
+          onChange={(e) => setPassword(e.target.value)}
         />
       </div>
 
-      <button type="submit" class="btn btn-primary">
+      <button type="submit" class="btn btn-primary" onClick={handleSubmit}>
         Login
       </button>
     </form>

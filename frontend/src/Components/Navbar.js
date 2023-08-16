@@ -1,4 +1,5 @@
 import React from "react";
+import { useCookies } from "react-cookie";
 //import cofawo from "../logo.png";
 //import FAQ from "./FAQ";
 import { useNavigate } from "react-router-dom";
@@ -6,7 +7,10 @@ import About from "./About";
 import "./Navbar.css";
 
 const Navbar = () => {
+  const [cookies, setCookie, removeCookie] = useCookies();
   const navigate = useNavigate();
+  const admin = cookies.Token;
+  console.log(admin);
   return (
     <nav class="navbar navbar-expand-lg bg-secondary-subtle bg-gradient">
       <div class="container">
@@ -67,10 +71,34 @@ const Navbar = () => {
               </a>
             </li>
             <li class="nav-item  px-2">
-              <a class="nav-link" onClick={() => navigate("/login")}>
-                <h6> Login</h6>
-              </a>
+              {admin ? (
+                <a
+                  class="nav-link"
+                  onClick={() => {
+                    removeCookie("Token");
+                    navigate("/");
+                  }}
+                >
+                  <h6> Logout</h6>
+                </a>
+              ) : (
+                <a
+                  class="nav-link"
+                  onClick={() => {
+                    navigate("/login");
+                  }}
+                >
+                  <h6> Login</h6>
+                </a>
+              )}
             </li>
+            {admin && (
+              <li className="nav-item px-2">
+                <a class="nav-link" onClick={() => navigate("/analytics")}>
+                  <h6> Data analytics</h6>
+                </a>
+              </li>
+            )}
           </ul>
         </div>
       </div>
