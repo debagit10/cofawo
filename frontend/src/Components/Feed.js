@@ -1,8 +1,38 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
-const Feed = () => {
+const Feed = ({ item }) => {
   const navigate = useNavigate();
+  const [comment, setComment] = useState();
+
+  const config = { headers: { "Content-type": "application/json" } };
+
+  const submit = async () => {
+    const report_id = item.id;
+    const response = await axios.post(
+      "http://localhost:5000/comment",
+      { report_id, comment },
+      config
+    );
+    if (response) {
+      console.log(response);
+    }
+  };
+
+  const seeComments = async () => {
+    const report_id = item.id;
+    const response = await axios.post(
+      "http://localhost:5000/viewComment",
+      { report_id },
+      config
+    );
+    if (response) {
+      const comments = response.data;
+      console.log(comments);
+    }
+  };
+
   return (
     <div className="container">
       <button
@@ -11,160 +41,31 @@ const Feed = () => {
       >
         Please Take Our General Questionnaire
       </button>
+
       <h4 className="text-center"> Reports Feed</h4>
-      <div class="card mb-3">
+
+      <div class="card mb-3" key={item.id}>
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
+          <h5 class="card-title">#{item.location}</h5>
+          <p class="card-text">{item.detail}</p>
         </div>
         <img src="..." class="card-img-top" alt="..." />
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">An item</li>
-          <li class="list-group-item">A second item</li>
+          <li class="list-group-item">
+            <b>Location:</b> {item.location}
+          </li>
         </ul>
-      </div>
-      <div class="card mb-3">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-        </div>
-        <img src="..." class="card-img-top" alt="..." />
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">An item</li>
-          <li class="list-group-item">A second item</li>
-        </ul>
-      </div>
-      <div class="card mb-3">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-        </div>
-        <img src="..." class="card-img-top" alt="..." />
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">An item</li>
-          <li class="list-group-item">A second item</li>
-        </ul>
-      </div>
-      <div class="card mb-3">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-        </div>
-        <img src="..." class="card-img-top" alt="..." />
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">An item</li>
-          <li class="list-group-item">A second item</li>
-        </ul>
-      </div>
-      <div class="card mb-3">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-        </div>
-        <img src="..." class="card-img-top" alt="..." />
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">An item</li>
-          <li class="list-group-item">A second item</li>
-        </ul>
-      </div>
-      <div class="card mb-3">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-        </div>
-        <img src="..." class="card-img-top" alt="..." />
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">An item</li>
-          <li class="list-group-item">A second item</li>
-        </ul>
-      </div>
-      <div class="card mb-3">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-        </div>
-        <img src="..." class="card-img-top" alt="..." />
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">An item</li>
-          <li class="list-group-item">A second item</li>
-        </ul>
-      </div>
-      <div class="card mb-3">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-        </div>
-        <img src="..." class="card-img-top" alt="..." />
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">An item</li>
-          <li class="list-group-item">A second item</li>
-        </ul>
-      </div>
-      <div class="card mb-3">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-        </div>
-        <img src="..." class="card-img-top" alt="..." />
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">An item</li>
-          <li class="list-group-item">A second item</li>
-        </ul>
-      </div>
-      <div class="card mb-3">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-        </div>
-        <img src="..." class="card-img-top" alt="..." />
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">An item</li>
-          <li class="list-group-item">A second item</li>
-        </ul>
-      </div>
-      <div class="card mb-3">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-        </div>
-        <img src="..." class="card-img-top" alt="..." />
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">An item</li>
-          <li class="list-group-item">A second item</li>
-        </ul>
+        <input
+          placeholder="Add comment here"
+          className="m-2"
+          onChange={(e) => setComment(e.target.value)}
+        />
+        <span>
+          <button onClick={submit} className="btn btn-primary">
+            Comment
+          </button>
+        </span>
+        <a onClick={seeComments}>See Comments</a>
       </div>
     </div>
   );

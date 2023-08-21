@@ -11,7 +11,6 @@ import Questionnaire from "./Pages/Questionnaire";
 import Navbar from "./Components/Navbar";
 import Footer from "./Footer";
 import Home from "./Pages/Home";
-import Form from "./Form";
 
 const App = () => {
   return (
@@ -29,7 +28,6 @@ const App = () => {
             <Route path="/about" Component={About} />
             <Route path="/questionnaire" Component={Questionnaire} />
             <Route path="/login" Component={Login} />
-            <Route path="/form" Component={Form} />
           </Routes>
         </div>
 

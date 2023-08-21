@@ -1,8 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Form from "../Components/Form";
 import Feed from "../Components/Feed";
+import axios from "axios";
 
 const Report = () => {
+  const [reports, setReports] = useState([]);
+  const config = { headers: { "Content-type": "application/json" } };
+  const getReports = async () => {
+    try {
+      const response = await axios.get("http://localhost:5000/report", config);
+      const report = response.data;
+
+      setReports(report);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    getReports();
+  });
+
   return (
     <>
       <div className="container">
@@ -11,7 +29,9 @@ const Report = () => {
             <Form />
           </div>
           <div class="col-md mt-5">
-            <Feed />
+            {reports.map((item) => (
+              <Feed key={item.id} item={item} />
+            ))}
           </div>
         </div>
       </div>

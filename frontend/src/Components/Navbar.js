@@ -51,6 +51,11 @@ const Navbar = () => {
               </a>
             </li>
             <li class="nav-item  px-2">
+              <a class="nav-link" onClick={() => navigate("/report")}>
+                <h6> Report</h6>
+              </a>
+            </li>
+            <li class="nav-item  px-2">
               <a class="nav-link" onClick={() => navigate("/about")}>
                 <h6> About</h6>
               </a>
@@ -65,11 +70,7 @@ const Navbar = () => {
                 <h6> Team</h6>
               </a>
             </li>
-            <li class="nav-item  px-2">
-              <a class="nav-link" onClick={() => navigate("/report")}>
-                <h6> Report</h6>
-              </a>
-            </li>
+
             <li class="nav-item  px-2">
               {admin ? (
                 <a

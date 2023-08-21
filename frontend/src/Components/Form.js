@@ -1,11 +1,13 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 const Form = () => {
+  const [error, setError] = useState();
   const [formData, setFormData] = useState({
     nausea: false,
     vomiting: false,
     diarrhea: false,
-    else: false,
+    other: false,
     isConfidential: false,
     detail: "",
     notify: true,
@@ -22,8 +24,57 @@ const Form = () => {
     });
   };
 
-  const handleSubmit = () => {
-    console.log(formData);
+  const handleSubmit = async () => {
+    const nausea = formData.nausea;
+    const vomiting = formData.vomiting;
+    const diarrhea = formData.diarrhea;
+    const other = formData.other;
+    const isConfidential = formData.isConfidential;
+    const detail = formData.detail;
+    const notify = formData.notify;
+    const alert = formData.alert;
+    const location = formData.location;
+
+    const symptoms = [];
+    if (diarrhea == true) {
+      symptoms.push("diarrhea");
+    }
+    if (nausea == true) {
+      symptoms.push("nausea");
+    }
+    if (vomiting == true) {
+      symptoms.push("vomiting");
+    }
+
+    const config = { headers: { "Content-type": "application/json" } };
+
+    try {
+      const report = await axios.post(
+        "http://localhost:5000/report",
+        {
+          nausea,
+          vomiting,
+          diarrhea,
+          other,
+          isConfidential,
+          detail,
+          notify,
+          alert,
+          location,
+          symptoms,
+        },
+        config
+      );
+      const data = report.data;
+      if (data) {
+        //window.location.reload();
+      }
+    } catch (error) {
+      setError("Could not upload report");
+      console.error(error);
+    }
+
+    //console.log(symtomps);
   };
 
   return (
@@ -77,11 +128,11 @@ const Form = () => {
               <input
                 type="checkbox"
                 class="btn-check"
-                id="else"
+                id="other"
                 autocomplete="off"
                 onChange={handleChange}
               />
-              <label class="btn btn-outline-primary" for="else">
+              <label class="btn btn-outline-primary" for="other">
                 Something else
               </label>
             </div>
@@ -172,6 +223,7 @@ const Form = () => {
               Alert regulators
             </label>
           </div>
+          {error}
         </div>
       </div>
     </div>
