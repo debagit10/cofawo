@@ -8,7 +8,10 @@ const Report = () => {
   const config = { headers: { "Content-type": "application/json" } };
   const getReports = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/report", config);
+      const response = await axios.get(
+        "https://cofawo-app.onrender.com/report",
+        config
+      );
       const report = response.data;
 
       setReports(report);

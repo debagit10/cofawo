@@ -81,7 +81,7 @@ const Food = () => {
     }
     const config = { headers: { "Content-type": "application/json" } };
     const response = await axios.post(
-      "http://localhost:5000/food",
+      "https://cofawo-app.onrender.com/food",
       { gender, diagnosis, treatment, recommendation, symptoms },
       config
     );

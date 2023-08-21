@@ -11,7 +11,7 @@ const Feed = ({ item }) => {
   const submit = async () => {
     const report_id = item.id;
     const response = await axios.post(
-      "http://localhost:5000/comment",
+      "https://cofawo-app.onrender.com/comment",
       { report_id, comment },
       config
     );
@@ -23,7 +23,7 @@ const Feed = ({ item }) => {
   const seeComments = async () => {
     const report_id = item.id;
     const response = await axios.post(
-      "http://localhost:5000/viewComment",
+      "https://cofawo-app.onrender.com/viewComment",
       { report_id },
       config
     );
