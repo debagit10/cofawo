@@ -2,7 +2,10 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="container">
+    <div
+      className="container"
+      style={{ height: "100vh", background: "#00D9FF" }}
+    >
       <div class="card  m-3 text-center">
         <img src="..." class="card-img-top" alt="..." />
         <div class="card-body">
