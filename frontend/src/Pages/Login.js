@@ -19,7 +19,7 @@ const Login = () => {
     const config = { headers: { "Content-type": "application/json" } };
 
     const response = await axios.post(
-      "https://cofawo-app.onrender.com/login",
+      "http://localhost:5000/login",
       {
         adminID,
         password,

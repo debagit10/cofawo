@@ -120,7 +120,7 @@ app.post("/viewComment", async (req, res) => {
       [report_id]
     );
     if (response) {
-      //console.log(response.rows);
+      console.log(response.rows);
       res.json(response.rows);
     }
   } catch (error) {

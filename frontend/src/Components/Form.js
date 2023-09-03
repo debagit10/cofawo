@@ -50,7 +50,7 @@ const Form = () => {
 
     try {
       const report = await axios.post(
-        "https://cofawo-app.onrender.com/report",
+        "http://localhost:5000/report",
         {
           nausea,
           vomiting,

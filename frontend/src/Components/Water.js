@@ -24,7 +24,7 @@ const Water = () => {
 
     const config = { headers: { "Content-type": "application/json" } };
     const response = await axios.post(
-      "https://cofawo-app.onrender.com/water",
+      "http://localhost:5000/water",
       { gender, action, domesticUse, hostel, suggestion, disease },
       config
     );

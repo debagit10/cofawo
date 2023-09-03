@@ -65,11 +65,6 @@ const Navbar = () => {
                 <h6> FAQ</h6>
               </a>
             </li>
-            <li class="nav-item  px-2">
-              <a class="nav-link" onClick={() => navigate("/team")}>
-                <h6> Team</h6>
-              </a>
-            </li>
 
             <li class="nav-item  px-2">
               {admin ? (
