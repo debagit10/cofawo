@@ -80,12 +80,16 @@ const Food = () => {
       symptoms.push("dehydration");
     }
     const config = { headers: { "Content-type": "application/json" } };
-    const response = await axios.post(
-      "http://localhost:5000/food",
-      { gender, diagnosis, treatment, recommendation, symptoms },
-      config
-    );
-    console.log(response);
+    try {
+      const response = await axios.post(
+        "https://cofawo-api.onrender.com/api/food/add",
+        { gender, diagnosis, treatment, recommendation, symptoms },
+        config
+      );
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <div class="card mx-3 my-3">

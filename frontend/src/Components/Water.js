@@ -23,13 +23,17 @@ const Water = () => {
     const disease = formData.disease;
 
     const config = { headers: { "Content-type": "application/json" } };
-    const response = await axios.post(
-      "https://cofawo-api.onrender.com/api/water/add",
-      { gender, action, domesticUse, hostel, suggestion, disease },
-      config
-    );
-    if (response) {
-      console.log(response);
+    try {
+      const response = await axios.post(
+        "https://cofawo-api.onrender.com/api/water/add",
+        { gender, action, domesticUse, hostel, suggestion, disease },
+        config
+      );
+      if (response) {
+        console.log(response);
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
   return (
