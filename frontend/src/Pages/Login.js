@@ -7,6 +7,7 @@ const Login = () => {
   const [adminID, setadminID] = useState();
   const [password, setPassword] = useState();
   const [cookies, setCookie, removeCookies] = useCookies();
+  const [error, setError] = useCookies();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -30,6 +31,8 @@ const Login = () => {
     if (data.success) {
       navigate("/");
       setCookie("Token", data.token);
+    } else {
+      setError(data.error);
     }
   };
 
