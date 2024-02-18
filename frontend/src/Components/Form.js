@@ -45,17 +45,16 @@ const Form = () => {
     if (vomiting == true) {
       symptoms.push("vomiting");
     }
+    if (other == true) {
+      symptoms.push("Something else");
+    }
 
     const config = { headers: { "Content-type": "application/json" } };
 
     try {
       const report = await axios.post(
-        "http://localhost:5000/report",
+        "https://cofawo-api.onrender.com/api/report/add",
         {
-          nausea,
-          vomiting,
-          diarrhea,
-          other,
           isConfidential,
           detail,
           notify,
@@ -67,7 +66,7 @@ const Form = () => {
       );
       const data = report.data;
       if (data) {
-        //window.location.reload();
+        console.log(data);
       }
     } catch (error) {
       setError("Could not upload report");
