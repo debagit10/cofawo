@@ -26,7 +26,11 @@ const Login = () => {
       },
       config
     );
-    console.log(response);
+    const data = response.data;
+    if (data.success) {
+      navigate("/");
+      setCookie("Token", data.token);
+    }
   };
 
   return (
