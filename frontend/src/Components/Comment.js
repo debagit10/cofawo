@@ -60,7 +60,8 @@ const Comment = ({ item }) => {
         <button
           className="btn"
           onClick={() => {
-            getComments(), setSeeComment(true);
+            getComments();
+            setSeeComment(true);
           }}
         >
           View Comments
