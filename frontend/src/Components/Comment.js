@@ -24,7 +24,7 @@ const Comment = ({ item }) => {
 
   const config = { headers: { "Content-type": "application/json" } };
 
-  const seeComments = async () => {
+  const getComments = async () => {
     const report_id = item.id;
 
     console.log(report_id);
@@ -49,12 +49,20 @@ const Comment = ({ item }) => {
           </button>
         </div>
 
-        {viewComment.map((item) => (
-          <ul>
-            <li style={{ listStyle: "none" }}>{item.comment}</li>
-          </ul>
-        ))}
-        <button className="btn" onClick={seeComments}>
+        <div>
+          {seeComment &&
+            viewComment.map((item) => (
+              <ul>
+                <li style={{ listStyle: "none" }}>{item.comment}</li>
+              </ul>
+            ))}
+        </div>
+        <button
+          className="btn"
+          onClick={() => {
+            getComments(), setSeeComment(true);
+          }}
+        >
           View Comments
         </button>
       </div>
