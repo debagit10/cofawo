@@ -9,7 +9,7 @@ const Comment = ({ item }) => {
   const submit = async () => {
     const report_id = item.id;
     const response = await axios.post(
-      "http://localhost:5000/comment",
+      "https://cofawo-api.onrender.com/api/comment/add",
       { report_id, comment },
       config
     );
@@ -29,15 +29,13 @@ const Comment = ({ item }) => {
 
     console.log(report_id);
 
-    const response = await axios.post(
-      "http://localhost:5000/viewComment",
-      { report_id },
-      config
+    const response = await axios.get(
+      "https://cofawo-api.onrender.com/api/comment/view",
+      { params: report_id }
     );
     if (response) {
       const comments = response.data;
       setViewComment(comments);
-      console.log(viewComment);
     }
   };
 
