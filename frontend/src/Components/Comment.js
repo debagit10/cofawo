@@ -33,10 +33,7 @@ const Comment = ({ item }) => {
       "https://cofawo-api.onrender.com/api/comment/view",
       { params: report_id }
     );
-    if (response) {
-      const comments = response.data;
-      setViewComment(comments);
-    }
+    console.log(response);
   };
 
   return (
