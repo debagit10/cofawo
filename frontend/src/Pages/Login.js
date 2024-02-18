@@ -26,12 +26,7 @@ const Login = () => {
       },
       config
     );
-    console.log(response.data);
-    const admin = response.data;
-    if (admin.success) {
-      setCookie("Token", admin.token);
-      navigate("/");
-    }
+    console.log(response);
   };
 
   return (
