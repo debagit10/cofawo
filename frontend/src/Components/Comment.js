@@ -47,12 +47,11 @@ const Comment = ({ item }) => {
         </div>
 
         <div>
-          {seeComment &&
-            viewComment.map((item) => (
-              <ul>
-                <li style={{ listStyle: "none" }}>{item.comment}</li>
-              </ul>
-            ))}
+          {viewComment.map((item) => (
+            <ul>
+              <li style={{ listStyle: "none" }}>{item.comment}</li>
+            </ul>
+          ))}
         </div>
         <button
           className="btn"
