@@ -4,7 +4,7 @@ import axios from "axios";
 const Comment = ({ item }) => {
   const [comment, setComment] = useState();
   const [viewComment, setViewComment] = useState([]);
-  const [seeComment, setSeeComment] = useState(true);
+  const [seeComment, setSeeComment] = useState(false);
 
   const submit = async () => {
     const report_id = item.id;
@@ -64,7 +64,7 @@ const Comment = ({ item }) => {
           className="btn"
           onClick={() => {
             getComments();
-            setSeeComment(true);
+            // setSeeComment(true);
           }}
         >
           View Comments
