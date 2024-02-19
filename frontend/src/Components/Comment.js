@@ -37,7 +37,7 @@ const Comment = ({ item }) => {
         { params: report_id }
       );
 
-      console.log(response.data);
+      console.log(response);
     } catch (error) {
       console.log(error);
     }
