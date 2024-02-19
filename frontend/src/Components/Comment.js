@@ -33,7 +33,8 @@ const Comment = ({ item }) => {
       "https://cofawo-api.onrender.com/api/comment/view",
       { params: report_id }
     );
-    console.log(response);
+
+    console.log(response.data);
   };
 
   return (
@@ -46,13 +47,13 @@ const Comment = ({ item }) => {
           </button>
         </div>
 
-        <div>
+        {/* <div>
           {viewComment.map((item) => (
             <ul>
               <li style={{ listStyle: "none" }}>{item.comment}</li>
             </ul>
           ))}
-        </div>
+        </div> */}
         <button
           className="btn"
           onClick={() => {
