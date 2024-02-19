@@ -8,13 +8,15 @@ const Comment = ({ item }) => {
 
   const submit = async () => {
     const report_id = item.id;
-    const response = await axios.post(
-      "https://cofawo-api.onrender.com/api/comment/add",
-      { report_id, comment },
-      config
-    );
-    if (response) {
+    try {
+      const response = await axios.post(
+        "https://cofawo-api.onrender.com/api/comment/add",
+        { report_id, comment },
+        config
+      );
       console.log(response);
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -29,12 +31,16 @@ const Comment = ({ item }) => {
 
     console.log(report_id);
 
-    const response = await axios.get(
-      "https://cofawo-api.onrender.com/api/comment/view",
-      { params: report_id }
-    );
+    try {
+      const response = await axios.get(
+        "https://cofawo-api.onrender.com/api/comment/view",
+        { params: report_id }
+      );
 
-    console.log(response.data);
+      console.log(response.data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
