@@ -34,7 +34,7 @@ const Comment = ({ item }) => {
     try {
       const response = await axios.get(
         "https://cofawo-api.onrender.com/api/comment/view",
-        { params: item.id }
+        { params: report_id }
       );
 
       console.log(response.data);
