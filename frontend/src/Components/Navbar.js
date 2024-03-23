@@ -47,22 +47,22 @@ const Navbar = () => {
                 aria-current="page"
                 onClick={() => navigate("/")}
               >
-                <h6> Home</h6>
+                <h6 style={{ color: "black" }}> HOME</h6>
               </a>
             </li>
             <li class="nav-item  px-2">
               <a class="nav-link" onClick={() => navigate("/report")}>
-                <h6> Report</h6>
+                <h6 style={{ color: "black" }}> REPORT</h6>
               </a>
             </li>
             <li class="nav-item  px-2">
               <a class="nav-link" onClick={() => navigate("/about")}>
-                <h6> About</h6>
+                <h6 style={{ color: "black" }}> ABOUT</h6>
               </a>
             </li>
             <li class="nav-item  px-2">
               <a class="nav-link" onClick={() => navigate("/faq")}>
-                <h6> FAQ</h6>
+                <h6 style={{ color: "black" }}> FAQ</h6>
               </a>
             </li>
 
@@ -75,7 +75,7 @@ const Navbar = () => {
                     navigate("/");
                   }}
                 >
-                  <h6> Logout</h6>
+                  <h6 style={{ color: "black" }}> LOGOUT</h6>
                 </a>
               ) : (
                 <a
@@ -84,14 +84,14 @@ const Navbar = () => {
                     navigate("/login");
                   }}
                 >
-                  <h6> Login</h6>
+                  <h6 style={{ color: "black" }}> LOGIN</h6>
                 </a>
               )}
             </li>
             {admin && (
               <li className="nav-item px-2">
                 <a class="nav-link" onClick={() => navigate("/analytics")}>
-                  <h6> Data analytics</h6>
+                  <h6 style={{ color: "black" }}> Data analytics</h6>
                 </a>
               </li>
             )}

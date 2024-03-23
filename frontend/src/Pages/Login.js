@@ -37,7 +37,7 @@ const Login = () => {
   };
 
   return (
-    <div style={{ background: "#00D9FF" }}>
+    <div style={{ background: "" }}>
       <div className="d-flex justify-content-center pt-5 align-items-center">
         <form style={{ height: "100vh", width: "50vw" }}>
           <div class="mb-3">
