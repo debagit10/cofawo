@@ -44,7 +44,7 @@ const FAQ = () => {
             </h2>
             <div
               id="question-two"
-              class="accordion-collapse collapse show"
+              class="accordion-collapse collapse "
               aria-labelledby="headingOne"
               data-bs-parent="#questions"
             >
@@ -69,7 +69,7 @@ const FAQ = () => {
             </h2>
             <div
               id="question-three"
-              class="accordion-collapse collapse show"
+              class="accordion-collapse collapse "
               aria-labelledby="headingOne"
               data-bs-parent="#questions"
             >
@@ -99,7 +99,7 @@ const FAQ = () => {
             </h2>
             <div
               id="question-four"
-              class="accordion-collapse collapse show"
+              class="accordion-collapse collapse "
               aria-labelledby="headingOne"
               data-bs-parent="#questions"
             >
@@ -126,7 +126,7 @@ const FAQ = () => {
             </h2>
             <div
               id="question-five"
-              class="accordion-collapse collapse show"
+              class="accordion-collapse collapse "
               aria-labelledby="headingOne"
               data-bs-parent="#questions"
             >
@@ -153,7 +153,7 @@ const FAQ = () => {
             </h2>
             <div
               id="question-six"
-              class="accordion-collapse collapse show"
+              class="accordion-collapse collapse "
               aria-labelledby="headingOne"
               data-bs-parent="#questions"
             >
@@ -179,7 +179,7 @@ const FAQ = () => {
             </h2>
             <div
               id="question-seven"
-              class="accordion-collapse collapse show"
+              class="accordion-collapse collapse "
               aria-labelledby="headingOne"
               data-bs-parent="#questions"
             >
@@ -217,7 +217,7 @@ const FAQ = () => {
             </h2>
             <div
               id="question-eight"
-              class="accordion-collapse collapse show"
+              class="accordion-collapse collapse "
               aria-labelledby="headingOne"
               data-bs-parent="#questions"
             >
@@ -249,7 +249,7 @@ const FAQ = () => {
             </h2>
             <div
               id="question-nine"
-              class="accordion-collapse collapse show"
+              class="accordion-collapse collapse "
               aria-labelledby="headingOne"
               data-bs-parent="#questions"
             >
@@ -275,7 +275,7 @@ const FAQ = () => {
             </h2>
             <div
               id="question-ten"
-              class="accordion-collapse collapse show"
+              class="accordion-collapse collapse "
               aria-labelledby="headingOne"
               data-bs-parent="#questions"
             >
@@ -302,7 +302,7 @@ const FAQ = () => {
             </h2>
             <div
               id="question-eleven"
-              class="accordion-collapse collapse show"
+              class="accordion-collapse collapse "
               aria-labelledby="headingOne"
               data-bs-parent="#questions"
             >
@@ -335,7 +335,7 @@ const FAQ = () => {
             </h2>
             <div
               id="question-twelve"
-              class="accordion-collapse collapse show"
+              class="accordion-collapse collapse "
               aria-labelledby="headingOne"
               data-bs-parent="#questions"
             >
@@ -363,7 +363,7 @@ const FAQ = () => {
             </h2>
             <div
               id="question-thirteen"
-              class="accordion-collapse collapse show"
+              class="accordion-collapse collapse "
               aria-labelledby="headingOne"
               data-bs-parent="#questions"
             >
