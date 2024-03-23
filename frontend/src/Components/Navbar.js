@@ -66,7 +66,7 @@ const Navbar = () => {
               </a>
             </li>
 
-            <li class="nav-item  px-2">
+            {/* <li class="nav-item  px-2">
               {admin ? (
                 <a
                   class="nav-link"
@@ -94,7 +94,7 @@ const Navbar = () => {
                   <h6 style={{ color: "black" }}> Data analytics</h6>
                 </a>
               </li>
-            )}
+            )} */}
           </ul>
         </div>
       </div>
